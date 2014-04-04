@@ -56,7 +56,12 @@ public class SurefireAggregatedReport extends AggregatedTestResultAction impleme
     }
 
     public Action getProjectAction(MavenModuleSet moduleSet) {
-        return new TestResultProjectAction(moduleSet);
+        return new SurefireAggregatedProjectAction(moduleSet);
+    }
+
+    @Override
+    public String getUrlName() {
+        return "surefireAggregatedTestReport";
     }
 
     @Override
